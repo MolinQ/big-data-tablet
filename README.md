@@ -1,9 +1,9 @@
 ## Getting Started
 
-<p style="color:green">Node >= v18</p>
+Node >= v18
 
-1. add .env file
-2. Install dependencies — <span style="color:green">npm install</span>
-3. reset database <span style="color:green">(optional)</span> — <span style="color:green">npm install</span>
-4. seeds — <span style="color:green">npx prisma db seed</span>
-5. start dev server — <span style="color:green">npm run dev</span>
+1. Add `.env` file
+2. Install dependencies — `npm install`
+3. Reset database (optional) — `npm run reset-db`
+4. Seed database — `npx prisma db seed`
+5. Start dev server — `npm run dev`
