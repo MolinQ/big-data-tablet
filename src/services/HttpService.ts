@@ -1,9 +1,12 @@
-import { NETWORK_ERROR, UNHANDLED_NETWORK_ERROR } from "@/constants/api-messages";
+import {
+  NETWORK_ERROR,
+  UNHANDLED_NETWORK_ERROR,
+} from "@/constants/api-messages";
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
-export class HttpService {  
+export class HttpService {
   private axiosInstance: AxiosInstance;
-  
+
   constructor() {
     const baseURL = process.env.NEXT_PUBLIC_API_URL;
     this.axiosInstance = axios.create({
@@ -33,12 +36,13 @@ export class HttpService {
         const serverErrorMessage =
           error.response.data?.message || UNHANDLED_NETWORK_ERROR;
         return Promise.reject(serverErrorMessage);
-      },
+      }
     );
   }
-  
-    get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-      return this.axiosInstance.get<T>(url, config).then(response => response as T);
-    }
 
+  get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+    return this.axiosInstance
+      .get<T>(url, config)
+      .then((response) => response as T);
+  }
 }
