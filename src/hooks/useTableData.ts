@@ -35,8 +35,8 @@ export const useInfiniteScrollVirtualTable = ({
       !isFetchingNextPage
     ) {
       const lastIndex = virtualItems[virtualItems.length - 1].index;
-        fetchNextPage();
-        lastIndexRef.current = lastIndex;
+      fetchNextPage();
+      lastIndexRef.current = lastIndex;
     }
   }, [
     rows.length,
