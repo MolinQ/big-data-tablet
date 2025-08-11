@@ -54,7 +54,6 @@ export function DataTable<T>({
       fetchNextPage,
       isFetchingNextPage,
     });
-
   const colCount = table.getHeaderGroups()[0]?.headers.length || 1;
 
   return (
